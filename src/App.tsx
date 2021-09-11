@@ -18,7 +18,7 @@ const App: React.FC = () => {
       <Router>
         <Switch>
           {/* Home screen with all authenticated app routes */}
-          <ProtectedRoute exact path="/" component={HomeScreen} />
+          <ProtectedRoute path="/" component={HomeScreen} />
           {/* Public screens */}
           <Route exact path="/login" component={LoginScreen} />
         </Switch>
