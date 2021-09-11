@@ -8,6 +8,10 @@ import ProtectedRoute from "@components/functionals/PrivateRoute";
 import HomeScreen from "@pages/home";
 import LoginScreen from "@pages/login";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.min.css";
+import "./global.scss";
+
 const App: React.FC = () => {
   return (
     <Provider store={store}>

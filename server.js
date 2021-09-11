@@ -10,5 +10,5 @@ app.use("/", express.static(path.resolve(__dirname, "./build")));
 app.set("port", process.env.PORT || 3000);
 
 var server = app.listen(app.get("port"), function () {
-  console.log("listening");
+  console.log("Server listening on port " + process.env.PORT || 3000);
 });

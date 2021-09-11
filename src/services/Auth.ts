@@ -5,6 +5,11 @@ class AuthService {
     localStorage.setItem("user_role", role);
   };
 
+  isAuthenticated = (): boolean => {
+    const token = localStorage.getItem("user_token");
+    return token ? true : false;
+  };
+
   logout = (): void => {
     localStorage.clear();
     window.location.href = "/login";

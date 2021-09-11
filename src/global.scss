@@ -1,0 +1,18 @@
+$theme-colors: (
+  "primary": #006ee6,
+  "secondary": #00254d,
+);
+$input-placeholder-color: rgb(180, 180, 180);
+
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  color: #252733;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");

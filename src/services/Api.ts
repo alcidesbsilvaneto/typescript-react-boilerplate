@@ -7,10 +7,7 @@ const headers = {
 };
 
 const Api = axios.create({
-  baseURL:
-    process.env.NODE_ENV === "production"
-      ? "https://api.production.com/v1"
-      : "http://localhost:1337/v1",
+  baseURL: process.env.NODE_ENV === "production" ? "https://api.production.com/v1" : "http://localhost:1337/v1",
   headers,
 });
 
@@ -27,11 +24,7 @@ Api.interceptors.response.use(
     return response;
   },
   function (error) {
-    if (
-      error.response &&
-      error.response.data &&
-      error.response.data.message === "token-expired"
-    ) {
+    if (error.response && error.response.data && error.response.data.message === "token-expired") {
       toast("Sua sessão expirou, faça login novamente");
       localStorage.clear();
       return window.location.replace("/login?expired=true");
