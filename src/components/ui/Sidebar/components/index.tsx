@@ -38,8 +38,8 @@ const MenuItemActiveIndicator = styled.div`
 const MenuItemContentContainer = styled(Link)<TogglableViewProps>`
   display: flex;
   flex: 1;
-  justify-content: center;
   align-items: center;
+  padding-left: 30px;
   text-decoration: none;
   background-color: ${(props) => (props.is_active ? "rgba(221, 226, 255, 0.08)" : "rgba(221, 226, 255, 0.0);")};
   color: ${(props) => (props.is_active ? "#DDE2FF" : "#A4A6B3")};
@@ -47,6 +47,13 @@ const MenuItemContentContainer = styled(Link)<TogglableViewProps>`
     background-color: rgba(221, 226, 255, 0.08);
     color: #dde2ff;
   }
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #a4a6b3;
+  opacity: 0.08;
 `;
 
 interface MenuItemProps {

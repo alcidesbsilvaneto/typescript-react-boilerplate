@@ -6,7 +6,6 @@ import ErrorMessage, { FormContainer, FormContainerWrapper, RootContainer, TextC
 
 import gears from "@assets/svg/gears.svg";
 import Api from "@services/Api";
-import { toastMessage } from "@util/functions";
 import Auth from "@services/Auth";
 import { Redirect } from "react-router";
 
@@ -26,7 +25,6 @@ const LoginScreen: React.FC = () => {
       const { data } = await Api.post(`/user/authenticate`, values);
       Auth.setAuthData(data.token, data.name, data.role);
       window.location.href = "/";
-      toastMessage("Autenticado", "success");
     } catch (error: any) {
       actions.setSubmitting(false);
       if (error?.response?.data?.userMessage === "unauthorized") return setErrorMessage("credenciais inválidas");

@@ -11,16 +11,19 @@ import LoginScreen from "@pages/login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./global.scss";
+import Logout from "@pages/logout";
 
 const App: React.FC = () => {
   return (
     <Provider store={store}>
       <Router>
         <Switch>
-          {/* Home screen with all authenticated app routes */}
-          <ProtectedRoute path="/" component={HomeScreen} />
           {/* Public screens */}
           <Route exact path="/login" component={LoginScreen} />
+          <Route exact path="/logout" component={Logout} />
+
+          {/* Home screen with all authenticated app routes */}
+          <ProtectedRoute path="/" component={HomeScreen} />
         </Switch>
       </Router>
       <ToastContainer />

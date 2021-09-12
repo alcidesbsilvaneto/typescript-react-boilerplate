@@ -1,9 +1,10 @@
 import * as React from "react";
-import { ListItemsContainer, LogoContainer, MenuItem, RootContainer } from "./components";
+import { Divider, ListItemsContainer, LogoContainer, MenuItem, RootContainer } from "./components";
 
 // Importing assets
 import gears from "@assets/svg/gears.svg";
 import { RiHome2Line } from "react-icons/ri";
+import { BsPower } from "react-icons/bs";
 import { useLocation } from "react-router";
 
 const Sidebar: React.FC = () => {
@@ -27,6 +28,13 @@ const Sidebar: React.FC = () => {
           icon={<RiHome2Line color={pathname === "/other" ? "#dde2ff" : "#A4A6B3"} style={{ marginRight: 10 }} size={16} />}
           is_active={pathname === "/other"}
           text={"Other"}
+        />
+        <Divider />
+        <MenuItem
+          href="/logout"
+          icon={<BsPower color={pathname === "/logout" ? "#dde2ff" : "#A4A6B3"} style={{ marginRight: 10 }} size={16} />}
+          is_active={pathname === "/logout"}
+          text={"Sair"}
         />
       </ListItemsContainer>
     </RootContainer>

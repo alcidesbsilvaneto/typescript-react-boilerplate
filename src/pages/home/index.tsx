@@ -15,7 +15,7 @@ const HomeScreen: React.FC = () => {
   return (
     <div style={{ flex: 1, flexDirection: "row", display: "flex" }}>
       <Sidebar />
-      <div>
+      <div style={{ flex: 1, backgroundColor: "#F7F8FC" }}>
         <Switch>
           <ProtectedRoute exact path={"/"} component={Home} />
           <ProtectedRoute exact path={"/other"} component={Other} />
