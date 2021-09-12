@@ -4,10 +4,15 @@ const app = createSlice({
   name: "app",
   initialState: {
     user: null,
+    isSidebarToggled: false,
   },
-  reducers: {},
+  reducers: {
+    toggleSidebar(state) {
+      state.isSidebarToggled = !state.isSidebarToggled;
+    },
+  },
 });
 
 export default app.reducer;
 
-//export const {} = app.actions;
+export const { toggleSidebar } = app.actions;

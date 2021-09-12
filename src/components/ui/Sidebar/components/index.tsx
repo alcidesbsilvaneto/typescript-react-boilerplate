@@ -5,11 +5,16 @@ interface TogglableViewProps {
   is_active: boolean;
 }
 
-export const RootContainer = styled.div`
+export const RootContainer = styled.div<{ is_toggled: boolean }>`
+  z-index: 2;
   width: 255px;
+  min-width: 255px;
+  position: relative;
+  left: ${(props) => (props.is_toggled ? "0px" : "-255px")};
   background-color: #363740;
   height: 100vh;
   color: white;
+  transition: left 1s;
 `;
 
 export const ListItemsContainer = styled.div``;
@@ -54,6 +59,21 @@ export const Divider = styled.div`
   height: 1px;
   background-color: #a4a6b3;
   opacity: 0.08;
+`;
+
+export const ToggleButton = styled.button<{ is_sidebar_toggled: boolean }>`
+  position: absolute;
+  left: 275px;
+  top: 10px;
+  transition: left 1s;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 10px;
+  border-radius: 50px;
 `;
 
 interface MenuItemProps {
